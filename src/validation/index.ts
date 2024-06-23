@@ -1,29 +1,23 @@
 import * as yup from "yup";
-export const registerSchema = yup
+
+export const schemaRegister = yup
   .object({
     username: yup
       .string()
-      .required("Username is required")
-      .min(5, "Username should be at least 5 charachters"),
+      .required("UserName Is Required!")
+      .min(5, "Must be at least 5 characters"),
     email: yup
       .string()
-      .required("Email is required")
-      .matches(/^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/, "Not a valid email address."),
+      .email("Must be a valid email")
+      .required("Email Is Required!")
+      .matches(
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        "Must be a valid email"
+      ),
     password: yup
       .string()
-      .required("Password is required")
-      .min(6, "Password should be at least 6 charachters."),
-  })
-  .required();
-export const loginSchema = yup
-  .object({
-    identifier: yup
-      .string()
-      .required("Email is required")
-      .matches(/^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/, "Not a valid email address."),
-    password: yup
-      .string()
-      .required("Password is required")
-      .min(6, "Password should be at least 6 charachters."),
+      .required("Password Is Required!")
+      .min(6, "Must be at least 6 characters")
+      .max(20, "Must be at most 20 characters"),
   })
   .required();

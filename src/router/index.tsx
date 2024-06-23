@@ -8,7 +8,7 @@ import PageNotFound from "../pages/PageNotFound";
 import RootLayout from "../pages/Layout";
 import ErrorHandler from "../components/errors/ErrorHandler";
 import HomePage from "../pages";
-import LoginPage from "../pages/Login";
+// import LoginPage from "../pages/Login";
 import RegisterPage from "../pages/Register";
 import TodosPage from "../pages/Todos";
 
@@ -57,7 +57,7 @@ const router = createBrowserRouter(
             </ProtectedRoute>
           }
         />
-        <Route
+        {/* <Route
           path="login"
           element={
             <ProtectedRoute
@@ -68,7 +68,7 @@ const router = createBrowserRouter(
               <LoginPage />
             </ProtectedRoute>
           }
-        />
+        /> */}
         <Route
           path="register"
           element={
